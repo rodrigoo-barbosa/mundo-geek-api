@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
-import { ZodSchema } from 'zod';
+import type { Request, Response } from 'express';
+import type { ZodSchema } from 'zod';
 import { AppError } from '../errors/AppError.js';
 
 export const validarBody = (schema: ZodSchema) => {
-    return (req: Request, res: Response, next: NextFunction) => {
+    return (req: Request, res: Response, next: any) => {
         try {
             const dadosValidados = schema.parse(req.body);
             req.body = dadosValidados;
@@ -15,7 +15,7 @@ export const validarBody = (schema: ZodSchema) => {
                 statusCode,
                 message,
                 timestamp: new Date().toISOString()
-            });
-        }
-    };
+        });
+    }
+};
 };

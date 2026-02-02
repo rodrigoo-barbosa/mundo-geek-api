@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 appDataSource
     .initialize()
     .then(() => {
-        console.log("✅ Banco de dados conectado com sucesso!");
+        console.log("Banco de dados conectado com sucesso!");
     })
     .catch((error) => {
         console.error("Erro ao conectar ao banco de dados:", error);
@@ -76,6 +76,6 @@ app.use((error: any, req: Request, res: Response, _next: any) => {
 
 // Iniciar servidor
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-    console.log(`📚 Documentação das rotas disponível em http://localhost:${PORT}/api/health`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Documentação das rotas disponível em http://localhost:${PORT}/api/health`);
 });
