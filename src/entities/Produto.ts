@@ -25,7 +25,7 @@ export class Produto {
     @UpdateDateColumn({ type: "timestamp" })
     declare dataAtualizacao: Date;
 
-    @ManyToOne(() => Categoria, (categoria) => categoria.produtos, { nullable: false, eager: true })
+    @ManyToOne(() => Categoria, (categoria) => categoria.produtos, { nullable: false })
     @JoinColumn({ name: "categoriaId" })
     declare categoria: Categoria;
 }

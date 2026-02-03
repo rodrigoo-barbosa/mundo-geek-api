@@ -19,6 +19,6 @@ export class Categoria {
     @UpdateDateColumn({ type: "timestamp" })
     declare dataAtualizacao: Date;
 
-    @OneToMany(() => Produto, (produto) => produto.categoria, { cascade: true, eager: true })
+    @OneToMany(() => Produto, (produto) => produto.categoria, { cascade: true })
     declare produtos: Produto[];
 }
